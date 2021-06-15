@@ -15,31 +15,53 @@ namespace ADsAPI.Controllers
         {
             _adsRepository = adsRepository;
         }
+        /// <summary>
+        /// selecting a specific ad
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("GetAd/{id}")]
         public async Task<Ad> Get(int id)
         {
             return await _adsRepository.Get(id);
         }
-
+        /// <summary>
+        /// selecting all ads of a specific campaign
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("GetAdByCampaign/{id}")]
         public async Task<IEnumerable<Ad>> GetAllAdByCampaignId(int id)
         {
             return await _adsRepository.GetAllAdByCampaignId(id);
         }
-
+        /// <summary>
+        /// selecting all ads of a specific advertiser
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("GetAdByAdvertiser/{id}")]
         public async Task<IEnumerable<Ad>> GetAllAdByAdvertiserId(int id)
         {
             return await _adsRepository.GetAllAdByAdvertiserId(id);
         }
-
+        /// <summary>
+        /// creating an ad
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Ad>> Create([FromBody] Ad ad)
         {
             var newAd = await _adsRepository.Create(ad);
             return CreatedAtAction(nameof(Get), new { id = newAd.Id });
         }
-
+        /// <summary>
+        /// modifying a specific ad
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="ad"></param>
+        /// <returns></returns>
         [HttpPut]
         public async Task<ActionResult<Ad>> Update(int id , [FromBody] Ad ad)
         {
