@@ -2,11 +2,11 @@
 
 This project is created on web api .Net core. Following are the API's and functionalities implemented on this project.
 
-1- API method to selecting a specific ad
-2- API method to selecting all ads of a specific campaign
-3- API method to selecting all ads of a specific advertiser
-4- API method to creating an ad
-5- API method to modifying a specific ad
+1- API method to selecting a specific ad<br/>
+2- API method to selecting all ads of a specific campaign<br/>
+3- API method to selecting all ads of a specific advertiser<br/>
+4- API method to creating an ad<br/>
+5- API method to modifying a specific ad<br/>
 
 ## Prerequisites
 you need to install following software/packages to execute this project<br/>
